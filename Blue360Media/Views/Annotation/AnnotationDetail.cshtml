@@ -1,0 +1,87 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@model Blue360Media.Entities.AnnotationDetail
+@{
+    ViewData["Title"] = "AnnotationDetail";
+    Layout = @HttpContextAccessor.HttpContext.Session.GetString("IsSystemAdministrator") == "True" ? "~/Views/Shared/_Layout.cshtml" : "~/Views/Shared/_UserLayout.cshtml";
+}
+@*<h2>AnnotationDetail</h2>*@
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<input type="hidden" id="divisionID" value=@Model.DivisionID />
+<div class="main-page">
+    
+    <div class="blank-page widget-shadow scroll" id="style-2 div1">
+       @* <input type="hidden" id="loggedinuserid" value="@HttpContextAccessor.HttpContext.Session.GetString("UserId")" />
+        <input type="hidden" id="loggedinmailid" value="@HttpContextAccessor.HttpContext.Session.GetString("Email")" />*@
+        <input type="hidden" value="@Model.DivisionID"  id="dividionID"/>
+
+        <Annotation> </Annotation>
+    </div>
+    <!--start modal-->
+    <div class="modal" id="myModal" style="display:none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <div class="form-title">
+                        <h4 style="color:red;" id="txtheading">Edit Annotation</h4>
+                    </div>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" style="padding:0px;">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
+                        <div class="forms">
+
+                            <div class="form-grids row widget-shadow" data-example-id="basic-forms">
+                                @*<div class="form-title">
+                                <h4 style="color:red;">Edit Annotation</h4>
+                                </div>*@
+                                <div class="form-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <input type="hidden" id="txt_annotationid"/>
+                                            <label for="exampleInputEmail1">Case Name</label>
+
+                                            <input type="text" class="form-control" id="txt_casename">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Case Link</label>
+                                            <input type="text" class="form-control" id="txt_caselink">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Citation</label>
+                                            <input type="text" id="txt_citation" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Blurb</label>
+                                            <textarea rows="6" class="form-control" id="txt_blurb"></textarea>
+                                        </div>
+                                     @*   <button type="button" class="btn btn-info SaveAnnotation" id="btnid">Save Changes</button>*@
+                                        <input type="button" class="btn btn-success SaveAnnotation" id="btnid" value="Save Changes" />
+                                        <button type="button" class="CloseModal btn btn-danger" data-bs-dismiss="modal">Close</button>
+
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--end modal-->
+</div>
+
+<link href="~/pagestyle/annotation/annotationdetail.css" rel="stylesheet" />
+<script src="~/pagescript/annotation/annotationdetail.js"></script>

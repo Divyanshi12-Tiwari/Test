@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@using Blue360Media.Entities
+@model Blue360Media.Entities.State
+@{
+    ViewData["Title"] = "Detail"; 
+    Layout = @HttpContextAccessor.HttpContext.Session.GetString("IsSystemAdministrator") == "True" ? "~/Views/Shared/_Layout.cshtml" : "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+@*<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>*@
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $('#example').DataTable({
+            "scrollX": true,
+            destroy: true,
+            "aaSorting": []
+        });
+    });
+</script>
+
+
+<div class="main-page">
+    <div class="blank-page widget-shadow scroll" id="style-2 div1">
+    <h3 class="title1">@Model.StateDesc</h3>
+    <input type="hidden" id="state_id" value="@Model.StateCode" />
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Number</th>
+                <th>Description</th>
+                <th>Number of Annotation</th>
+                <th>Last Updated On</th>
+                <th>Last Updated By</th>
+            </tr>
+        </thead>
+    </table>
+    </div>
+</div>
+<div class="bs-example widget-shadow" data-example-id="contextual-table">
+</div>
+
+@*<script src="~/content/pagescript/state/Detail.js"></script>*@
+
+<script src="~/pagescript/state/detail.js"></script>

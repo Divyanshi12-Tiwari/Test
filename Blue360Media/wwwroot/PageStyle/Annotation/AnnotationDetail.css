@@ -1,0 +1,63 @@
+﻿.btn {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+.rounded-pill {
+    border-radius: 50rem !important;
+}
+
+.commontext {
+    font-weight: bold;
+    font-size: 1.6rem;
+    line-height: 0.5rem;
+}
+
+.headertitle {
+    /*color: #0062a8;*/
+    color: black;
+    font-weight: bold;
+    margin-bottom: 0.8em;
+    text-align: -webkit-center;
+}
+
+.sectionItem {
+    font-weight: 600;
+}
+.selectbox {
+    outline: none;
+    border: 1px solid #D0D0D0;
+    background: none;
+    font-size: 14px;
+    padding: 9px 9px;
+    width: 35%;
+    margin: 1em 0;
+}
+.AddAnnotation
+{
+    /*margin-left:5rem;*/
+    background-color:black;
+    color:white;
+}
+.AddAnnotation:hover
+{
+   color:white;
+   animation:alternate;
+}
+.EditAnnotation
+{
+    margin-left:2rem;
+    font-weight:bold;
+}
+.DeleteAnnotation {
+    margin-left: 2rem;
+    font-weight:bold;
+}
+
+.modal {
+    margin-top: 3rem
+}
+/*.SaveAnnotation {
+    background-color: #306fb0
+}*/
+

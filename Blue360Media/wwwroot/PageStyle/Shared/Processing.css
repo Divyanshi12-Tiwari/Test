@@ -1,0 +1,12 @@
+﻿.processing {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    /*background-image: url('../../image/loading.gif');*/
+    background: url(../../image/processing.gif) 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;
+    display: none;
+}

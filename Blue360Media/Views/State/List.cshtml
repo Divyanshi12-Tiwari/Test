@@ -1,0 +1,58 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@model Blue360Media.Entities.State
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    Layout = @HttpContextAccessor.HttpContext.Session.GetString("IsSystemAdministrator") == "True" ? "~/Views/Shared/_Layout.cshtml" : "~/Views/Shared/_UserLayout.cshtml";
+}
+@*@ViewBag.LoggedInUserFullName*@
+
+<div class="main-page">
+    <div class="blank-page widget-shadow scroll" id="style-2 div1">
+        <div class="row">
+            <h2>Select State</h2>
+            @* <div class="col-sm-2"></div>*@
+            <div class="col-sm-12">
+                <div class="forms">
+                    @*<h3 class="title1">Select State</h3>*@
+                    <div class=" form-grids row form-grids-right">
+                        <div class="widget-shadow " data-example-id="basic-forms">
+                            <div class="form-title">
+                                <h4 style="margin-left: 15%;">Select State:</h4>
+                            </div>
+                            <div class="form-body">
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-2 control-label">State</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" id="txt_StateCode" name="StateCode"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-offset-2">
+                                        <button type="button" class="btn btn-default go" style="background-color:#0062a8">Go</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*<div class="col-sm-2"></div>*@
+        </div>
+    </div>
+</div>
+
+<div id="page-wrapper">
+    <div class="main-page maincontent" style="margin-left: -21%; margin-right: 18%;margin-top:-14%;">
+ 
+
+
+    </div>
+</div>
+
+<script src="~/pagescript/state/sweetalert.js"></script>
+
+<script src="~/pagescript/state/list.js"></script>
+<link href="~/pagestyle/state/list.css" rel="stylesheet" />

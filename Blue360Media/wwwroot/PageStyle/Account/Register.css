@@ -1,0 +1,35 @@
+﻿/*.backtologin {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    background: #61c1bd;
+    width: 19%;
+    padding: 0.5em 0.5em;
+    font-size: 1em;
+}*/
+.Register {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    background: #6164C1;
+    width: 19%;
+    padding: 0.5em 0.5em;
+    font-size: 1em;
+    margin: 0.5em 0 0;
+    margin-left: 13.5rem;
+}
+.emailbox {
+    outline: none;
+    border: 1px solid #D0D0D0;
+    background: none;
+    font-size: 14px;
+    padding: 10px 10px;
+    width: 100%;
+    margin: 1em 0;
+}
+
+
+
+

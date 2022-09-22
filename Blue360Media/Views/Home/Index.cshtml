@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<style>
+    .LoginButton{
+        border: none;
+        outline: none;
+        cursor: pointer;
+        color: #fff;
+        background: #6164C1;
+        width: 100%;
+        padding: 0.5em 1em;
+        font-size: 1em;
+        margin: 0.5em 0 0;
+    }
+</style>
+<div class="main-page login-page ">
+    <h3 class="title1">SignIn Page</h3>
+    <div class="widget-shadow">
+        <div class="login-top">
+            <h4>
+                Welcome back to Novus AdminPanel ! <br> Not a Member?
+                <a  asp-area="" asp-controller="Account" asp-action="">Sign Up »</a>
+            </h4>
+        </div>
+        <div class="login-body">
+            <form>
+                <input type="text" class="user" id="email" name="email" placeholder="Enter your email" required="">
+                <input type="password" id="password" name="password" class="lock" placeholder="password">
+                <input type="button" class="btn btn-success LoginButton" name="Sign In" value="Sign In">
+                <div class="forgot-grid">
+                    <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Remember me</label>
+                    <div class="forgot">
+                        <a asp-controller="State" asp-action="List">forgot password?</a>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="login-page-bottom">
+        <h5> - OR -</h5>
+        <div class="social-btn"><a href="#"><i class="fa fa-facebook"></i><i>Sign In with Facebook</i></a></div>
+        <div class="social-btn sb-two"><a href="#"><i class="fa fa-twitter"></i><i>Sign In with Twitter</i></a></div>
+    </div>
+</div>
+<script src="~/pagescript/account/login.js"></script>

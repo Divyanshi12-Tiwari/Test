@@ -1,0 +1,17 @@
+﻿.LoginButton {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    background: #6164C1;
+    width: 100%;
+    padding: 0.5em 0.5em;
+    font-size: 1em;
+    margin: 0.5em 0 0;
+    /*margin-left:13.5rem;*/
+}
+
+
+.signup-page {
+    margin-top: -6%;
+}

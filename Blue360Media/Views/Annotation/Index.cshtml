@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@model Blue360Media.Entities.Annotation
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml"; ViewData["Title"] = "Detail"; 
+    Layout = @HttpContextAccessor.HttpContext.Session.GetString("IsSystemAdministrator") == "True" ? "~/Views/Shared/_Layout.cshtml" : "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+@*<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>*@
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+@*<script>
+    $(document).ready(function () {
+
+        $('#example').DataTable({
+            "scrollX": true,
+            destroy: true,
+            "aaSorting": []
+        });
+    });
+</script>*@
+
+<input type="hidden" id="statecode" value=@Model.StateCd />
+<input type="hidden" id="titleid" value=@Model.TitleID />
+
+
+<div class="main-page">
+    <div class="blank-page widget-shadow scroll" id="style-2 div1">
+        <Annotation></Annotation>
+    </div>
+</div>
+<script src="~/pagescript/annotation/index.js"></script>
+
+
+<link href="~/pagestyle/annotation/index.css" rel="stylesheet" />

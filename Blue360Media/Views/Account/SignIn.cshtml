@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "SignIn";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div class="main-page login-page ">
+    <h3 class="title1">SignIn Page</h3>
+    <div class="widget-shadow">
+        <div class="login-top">
+            <h4>
+                Welcome back to Novus AdminPanel ! <br> Not a Member?
+                <a asp-area="" asp-controller="Account" asp-action="Register">Sign Up »</a>
+            </h4>
+        </div>
+        <div class="login-body">
+            <form>
+                <input type="text" class="user" id="email" name="email" placeholder="Enter your email" required="">
+                <input type="password" id="password" name="password" class="lock" placeholder="password">
+                <input type="button" class="btn btn-success LoginButton" name="Sign In" value="Sign In">
+                <div class="forgot-grid">
+                    <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Remember me</label>
+                    <div class="forgot">
+                        <a asp-controller="Account" asp-action="ForgotPassword">forgot password?</a>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="login-page-bottom">
+        <h5> - OR -</h5>
+        <div class="social-btn"><a href="#"><i class="fa fa-facebook"></i><i>Sign In with Facebook</i></a></div>
+        <div class="social-btn sb-two"><a href="#"><i class="fa fa-twitter"></i><i>Sign In with Twitter</i></a></div>
+    </div>
+</div>
+<script src="~/pagescript/account/SignIn.js"></script>
+<link href="~/pagestyle/account/SignIn.css" rel="stylesheet" />

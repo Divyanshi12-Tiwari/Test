@@ -1,0 +1,107 @@
+﻿@model Blue360Media.Entities.Register
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/pagestyle/account/Register.css" rel="stylesheet" />
+<div class="main-page signup-page">
+    <h3 class="title1">Add New User</h3>
+    <p class="creating">
+        Having hands on experience in creating innovative designs,I do offer design
+        solutions which harness.
+    </p>
+    <div class="sign-up-row widget-shadow">
+        <h5>Personal Information :</h5>
+        <div class="sign-u">
+            <div class="sign-up1">
+                <h4>First Name* :</h4>
+            </div>
+            <div class="sign-up2">
+                <form>
+                    @*<input type="text" required>*@
+                    @Html.TextBoxFor(model=>model.FirstName,new{@id="firstname",@required=true})
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="sign-u">
+            <div class="sign-up1">
+                <h4>Last Name* :</h4>
+            </div>
+            <div class="sign-up2">
+                <form>
+                  @*  <input type="text" required>*@
+                    @Html.TextBoxFor(model=>model.LastName,new{@id="lastname",@required=true})
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+
+
+
+        <div class="sign-u">
+            <div class="sign-up1">
+                <h4>User Role :</h4>
+            </div>
+            <div class="sign-up2">
+                <form>
+                    <select class="emailbox" id="userrole" name="RoleId"></select>
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+
+
+
+        <div class="sign-u">
+            <div class="sign-up1">
+                <h4>Email Address* :</h4>
+            </div>
+            <div class="sign-up2">
+                <form>
+                   @* <input type="text" required>*@
+                    @Html.TextBoxFor(model=>model.Email,new{@id="email",@type="email",@required=true,@class="emailbox"})
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        
+        <h6>Login Information :</h6>
+        <div class="sign-u">
+            <div class="sign-up1">
+                <h4>Password* :</h4>
+            </div>
+            <div class="sign-up2">
+                <form>
+                  @*  <input type="password" required>*@
+                    @Html.TextBoxFor(model=>model.Password,new{@id="password",@type="password"})
+                  <span id="password_msg" style="color:red;"></span>
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="sign-u">
+            <div class="sign-up1">
+                <h4>Confirm Password* :</h4>
+            </div>
+            <div class="sign-up2">
+                <form>
+                   @* <input type="password" required>*@
+                    @Html.TextBoxFor(model=>model.ConfirmPassword,new{@id="cpassword",@type="password"})
+                    <span id="password_match" style="color:red;"></span>
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="sub_home">
+            <form>
+                <input type="submit" value="Submit" style="display:none;" id="_submitbtn">
+                 <input type="button" value="Submit" class="Register">
+                @*<a asp-controller="Home" asp-action="Index">  <input type="button" value="Back To Login" class="backtologin"></a>*@
+            </form>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<script src="~/pagescript/account/register.js"></script>
